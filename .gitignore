@@ -1,0 +1,7 @@
+**/__pycache__
+*/*.pth
+*/*.lock
+src/dataset/*
+src/pretrain/*
+src/result/*
+*.pyc

@@ -1,0 +1,63 @@
+{
+    "font": {
+        "roboto": "./supporting_files/font/Roboto-Regular.ttf",
+        "roboto_B": "./supporting_files/font/Roboto-Medium.ttf",
+        "roboto_I": "./supporting_files/font/Roboto-Italic.ttf",
+        "GenShinGothic": "./supporting_files/font/GenShinGothic-Regular.ttf",
+        "GenShinGothic_B": "./supporting_files/font/GenShinGothic-Bold.ttf"
+    },
+    "content_indent_level": {
+        "Heading1": {
+            "fontName": "GenShinGothic_B",
+            "fontSize": 24,
+            "leading": 16
+        },
+        "Heading1Note": {
+            "fontSize": 12,
+            "leading": 16,
+            "spaceAfter":10,
+            "firstLineIndent": -10,
+            "leftIndent": 10
+        },
+        "Heading2": {
+            "fontName": "GenShinGothic",
+            "fontSize": 16,
+            "leading": 16,
+            "spaceAfter": 10
+        },
+        "Heading2Description": {
+            "fontName": "GenShinGothic",
+            "fontSize": 12,
+            "leading": 16,
+            "spaceAfter": 10
+        },
+        "ContentIntro": {
+            "fontSize": 16,
+            "leading": 16,
+            "spaceAfter": 10
+        },
+        "ContentNote": {
+            "fontSize": 12,
+            "leading": 16,
+            "spaceAfter": 10,
+            "firstLineIndent": -10,
+            "leftIndent": 10
+        }
+    },
+    "toc_indent_level": {
+        "TOCHeading1": {
+            "fontName": "GenShinGothic_B",
+            "fontSize": 16,
+            "leading": 20
+        },
+        "TOCHeading2": {
+            "fontName": "GenShinGothic",
+            "fontSize": 12,
+            "leading": 16,
+            "leftIndent": 12
+        }
+    },
+    "table_column_width": {
+        "one_column": 52
+    }
+}

@@ -1,0 +1,560 @@
+{
+    "single_label": {
+        "Model Performance - Figures": {
+            "handler": "generate_model_performance_figures",
+            "content_info": {
+                "Receiver Operating Characteristic Curve (ROC Curve)": {
+                    "metric_x": "fpr",
+                    "metric_x_name": "False Positive Rate (%)",
+                    "metric_y": "tpr",
+                    "metric_y_name": "True Positive Rate (%)",
+                    "average_metric": "roc_auc",
+                    "average_metric_name": "Average AUC",
+                    "class_wise_average_metric_name": "AUC",
+                    "dataset_folder": ["inference"],
+                    "dataset_name": ["Test Set"],
+                    "body": "roc_curve"
+                },
+                "Precision Recall Curve (PR Curve)": {
+                    "metric_x": "pr_recall",
+                    "metric_x_name": "Recall",
+                    "metric_y": "pr_precision",
+                    "metric_y_name": "Precision",
+                    "average_metric": "pr_auc",
+                    "average_metric_name": "Average AUC",
+                    "class_wise_average_metric_name": "AUC",
+                    "dataset_folder": ["inference"],
+                    "dataset_name": ["Test Set"],
+                    "body": "pr_curve"
+                },
+                "Confusion Matrix": {
+                    "dataset_folder": ["inference"],
+                    "dataset_name": ["Test Set"],
+                    "body": "confusion_matrix"
+                }
+            }
+        },
+        "Model Performance - Table": {
+            "handler": "generate_model_performance_table",
+            "content_info": {
+                "Multi-Label Classification Performance Overview": {
+                    "row_name": "Label",
+                    "column_names": {
+                        "Accuracy (%)": {
+                            "metric": "accuracy",
+                            "unit": "percentage"
+                        },
+                        "Precision (%)": {
+                            "metric": "precision",
+                            "unit": "percentage"
+                        },
+                        "Recall (%)": {
+                            "metric": "recall",
+                            "unit": "percentage"
+                        },
+                        "Specificity (%)": {
+                            "metric": "specificity",
+                            "unit": "percentage"
+                        },
+                        "F1 (%)": {
+                            "metric": "f1",
+                            "unit": "percentage"
+                        }
+                    },
+                    "dataset_folder": ["inference"],
+                    "dataset_name": ["Test Set"],
+                    "content_note": "<font color='rgb(166, 46, 23)'>Note:<br />(TP = True Positive, FP = False Positive, FN = False Negative, TN = True Negative)<br />* Precision: TP / (TP + FP).<br />* Recall: TP / (TP + FN)<br />* Specificity = TN / (TN + FP)<br />* Accuracy = (TP + TN) / (TP + TN + FP + FN)<br />* F1 = 2 * (Precision * Recall) / (Precision + Recall)</font>"
+                }
+            }
+        },
+        "Data and Prediction Statistics - Figures": {
+            "handler": "generate_data_statistics_figures",
+            "content_info": {
+                "Label Distribution": {
+                    "description": "The figures below display the number of images that contain the given label.",
+                    "dataset_folder": [
+                        "inference",
+                        "prediction"
+                    ],
+                    "dataset_name": [
+                        "Test Set",
+                        "Prediction"
+                    ],
+                    "body": "label_distribution",
+                    "show_full_len": false
+                }
+            }
+        },
+        "Data and Prediction Statistics - Tables": {
+            "handler": "generate_data_statistics_tables",
+            "content_info": {
+                "Label Distribution": {
+                    "description": "The tables below display the number of images that contain the given label.",
+                    "count_base": "images",
+                    "dataset_folder": [
+                        "inference",
+                        "prediction"
+                    ],
+                    "dataset_name": [
+                        "Test Set",
+                        "Prediction"
+                    ],
+                    "body": "label_distribution"
+                }
+            }
+        },
+        "Case Studies": {
+            "handler": "generate_case_studies",
+            "note":"<font color='rgb(166, 46, 23)'>Note:<br />The following case studies illustrate the model predictions according to each label listed below.<br />Each prediction is classsified by as either a True Positivem False Positive or False Negative.</font>",
+            "content_info": {
+                "Error Analysis": {}
+            }
+        }
+    },
+    "multi_label": {
+        "Model Performance - Figures": {
+            "handler": "generate_model_performance_figures",
+            "content_info": {
+                "Receiver Operating Characteristic Curve (ROC Curve)": {
+                    "metric_x": "fpr",
+                    "metric_x_name": "False Positive Rate (%)",
+                    "metric_y": "tpr",
+                    "metric_y_name": "True Positive Rate (%)",
+                    "average_metric": "roc_auc",
+                    "average_metric_name": "Average AUC",
+                    "class_wise_average_metric_name": "AUC",
+                    "dataset_folder": ["inference"],
+                    "dataset_name": ["Test Set"],
+                    "body": "roc_curve"
+                },
+                "Precision Recall Curve (PR Curve)": {
+                    "metric_x": "pr_recall",
+                    "metric_x_name": "Recall",
+                    "metric_y": "pr_precision",
+                    "metric_y_name": "Precision",
+                    "average_metric": "pr_auc",
+                    "average_metric_name": "Average AUC",
+                    "class_wise_average_metric_name": "AUC",
+                    "dataset_folder": ["inference"],
+                    "dataset_name": ["Test Set"],
+                    "body": "pr_curve"
+                }
+            }
+        },
+        "Model Performance - Table": {
+            "handler": "generate_model_performance_table",
+            "content_info": {
+                "Multi-Label Classification Performance Overview": {
+                    "row_name": "Label",
+                    "column_names": {
+                        "Accuracy (%)": {
+                            "metric": "accuracy",
+                            "unit": "percentage"
+                        },
+                        "TP": {
+                            "metric": "tp",
+                            "unit": "number"
+                        },
+                        "FP": {
+                            "metric": "fp",
+                            "unit": "number"
+                        },
+                        "FN": {
+                            "metric": "fn",
+                            "unit": "number"
+                        },
+                        "TN": {
+                            "metric": "tn",
+                            "unit": "number"
+                        },
+                        "Precision (%)": {
+                            "metric": "precision",
+                            "unit": "percentage"
+                        },
+                        "Recall (%)": {
+                            "metric": "recall",
+                            "unit": "percentage"
+                        },
+                        "Specificity (%)": {
+                            "metric": "specificity",
+                            "unit": "percentage"
+                        },
+                        "F1 (%)": {
+                            "metric": "f1",
+                            "unit": "percentage"
+                        }
+                    },
+                    "dataset_folder": ["inference"],
+                    "dataset_name": ["Test Set"],
+                    "content_note": "<font color='rgb(166, 46, 23)'>Note:<br />Each prediction and ground truth are calculated for each class separately (with threshold 0.5).<br />(TP = True Positive, FP = False Positive, FN = False Negative, TN = True Negative)<br />* Precision: TP / (TP + FP).<br />* Recall: TP / (TP + FN)<br />* Specificity = TN / (TN + FP)<br />* Accuracy = (TP + TN) / (TP + TN + FP + FN)<br />* F1 = 2 * (Precision * Recall) / (Precision + Recall)</font>"
+                }
+            }
+        },
+        "Data and Prediction Statistics - Figures": {
+            "handler": "generate_data_statistics_figures",
+            "content_info": {
+                "Label Distribution": {
+                    "description": "The figures below display the number of images that contain the given label.",
+                    "dataset_folder": [
+                        "inference",
+                        "prediction"
+                    ],
+                    "dataset_name": [
+                        "Test Set",
+                        "Prediction"
+                    ],
+                    "body": "label_distribution",
+                    "show_full_len": true
+                }
+            }
+        },
+        "Data and Prediction Statistics - Tables": {
+            "handler": "generate_data_statistics_tables",
+            "content_info": {
+                "Label Distribution": {
+                    "description": "The tables below display the number of images that contain the given label.",
+                    "count_base": "images",
+                    "dataset_folder": [
+                        "inference",
+                        "prediction"
+                    ],
+                    "dataset_name": [
+                        "Test Set",
+                        "Prediction"
+                    ],
+                    "body": "label_distribution"
+                }
+            }
+        },
+        "Case Studies": {
+            "handler": "generate_case_studies",
+            "note":"<font color='rgb(166, 46, 23)'>Note:<br />The following case studies illustrate the model predictions according to each label listed below.<br />Each prediction is classsified by as either a True Positivem False Positive or False Negative.</font>",
+            "content_info": {
+                "Error Analysis": {}
+            }
+        }
+    },
+    "detection": {
+        "Model Performance - Figures": {
+            "handler": "generate_model_performance_figures",
+            "content_info": {
+                "Free-Response Receiver Operating Characteristic Curve (FROC Curve)": {
+                    "metric_x": "fppi_fifty",
+                    "metric_x_name": "False Positive Per Image",
+                    "metric_y": "tpr_fifty",
+                    "metric_y_name": "True Positive Rate",
+                    "average_metric_name": "IoU Threshold",
+                    "dataset_folder": ["inference"],
+                    "dataset_name": ["Test Set"],
+                    "body": "froc_curve"
+                },
+                "Precision Recall Curve (PR Curve)": {
+                    "metric_x": "recall_fifty",
+                    "metric_x_name": "Recall",
+                    "metric_y": "precision_fifty",
+                    "metric_y_name": "Precision",
+                    "average_metric_name": "IoU Threshold",
+                    "dataset_folder": ["inference"],
+                    "dataset_name": ["Test Set"],
+                    "body": "pr_curve"
+                }
+            }
+        },
+        "Model Performance - Table": {
+            "handler": "generate_model_performance_table",
+            "content_info": {
+                "Detection Performance Overview": {
+                    "row_name": "Label",
+                    "column_names": {
+                        "IoU=0.5": {
+                            "metric": "iou_fifty",
+                            "unit": "percentage"
+                        },
+                        "IoU=0.75": {
+                            "metric": "iou_seventy_five",
+                            "unit": "percentage"
+                        },
+                        "Average": {
+                            "metric": "average",
+                            "unit": "percentage"
+                        }
+                    },
+                    "dataset_folder": ["inference"],
+                    "dataset_name": ["Test Set"],
+                    "content_note": "<font color='rgb(166, 46, 23)'>Note:<br />* Precision: the percentage of correct predictions out of all predictions.<br />* Recall: the percentage of correct predictions out of all ground truth</font>"
+                }
+            }
+        },
+        "Data and Prediction Statistics - Figures": {
+            "handler": "generate_data_statistics_figures",
+            "content_info": {
+                "Label Distribution": {
+                    "description": "The figures below display the number of images that contain the given label.",
+                    "dataset_folder": [
+                        "inference",
+                        "prediction"
+                    ],
+                    "dataset_name": [
+                        "Test Set",
+                        "Prediction"
+                    ],
+                    "body": "image_wise",
+                    "show_full_len": true
+                },
+                "Bounding Box Labels": {
+                    "description": "The figures below display the number of bounding boxes that were assigned the given label.",
+                    "dataset_folder": [
+                        "inference",
+                        "prediction"
+                    ],
+                    "dataset_name": [
+                        "Test Set",
+                        "Prediction"
+                    ],
+                    "body": "box_wise",
+                    "show_full_len": false
+                },
+                "Bounding Box Area": {
+                    "description": "The figures below display the size of the bounding boxes compared to the image,<br /> which would be classified into Small (<= 32^2), Medium (32^2 - 96^2), and Large (> 96^2).",
+                    "dataset_folder": [
+                        "inference",
+                        "prediction"
+                    ],
+                    "dataset_name": [
+                        "Test Set",
+                        "Prediction"
+                    ],
+                    "body": "box_area",
+                    "show_full_len": false
+                },
+                "Bounding Box Width-Height Ratio": {
+                    "description": "The figures below display the shape of the bounding boxes by the ratio of the width and height,<br /> which would be classified into Narrow (<= 1/2), Semi-Narrow (1/2 - 4/5), Square (4/5 - 5/4), Semi-Wide (5/4 - 2/1), or Wide (> 2/1).",
+                    "dataset_folder": [
+                        "inference",
+                        "prediction"
+                    ],
+                    "dataset_name": [
+                        "Test Set",
+                        "Prediction"
+                    ],
+                    "body": "box_ratio",
+                    "show_full_len": false
+                },
+                "Bounding Box Per Image": {
+                    "description": "The figures below display the number of bounding boxes per image.",
+                    "dataset_folder": [
+                        "inference",
+                        "prediction"
+                    ],
+                    "dataset_name": [
+                        "Test Set",
+                        "Prediction"
+                    ],
+                    "body": "box_per_image",
+                    "show_full_len": false
+                }
+            }
+        },
+        "Data and Prediction Statistics - Tables": {
+            "handler": "generate_data_statistics_tables",
+            "content_info": {
+                "Label Distribution": {
+                    "description": "The tables below display the number of images that contain the given label.",
+                    "count_base": "images",
+                    "dataset_folder": [
+                        "inference",
+                        "prediction"
+                    ],
+                    "dataset_name": [
+                        "Test Set",
+                        "Prediction"
+                    ],
+                    "body": "image_wise"
+                },
+                "Bounding Box Labels": {
+                    "description": "The tables below display the number of bounding boxes that were assigned the given label.",
+                    "count_base": "boxes",
+                    "dataset_folder": [
+                        "inference",
+                        "prediction"
+                    ],
+                    "dataset_name": [
+                        "Test Set",
+                        "Prediction"
+                    ],
+                    "body": "box_wise"
+                },
+                "Bounding Box Area": {
+                    "description": "The tables below display the size of the bounding boxes compared to the image,<br /> which would be classified into Small (<= 32^2), Medium (32^2 - 96^2), and Large (> 96^2).",
+                    "count_base": "boxes",
+                    "dataset_folder": [
+                        "inference",
+                        "prediction"
+                    ],
+                    "dataset_name": [
+                        "Test Set",
+                        "Prediction"
+                    ],
+                    "body": "box_area"
+                },
+                "Bounding Box Width-Height Ratio": {
+                    "description": "The tables below display the shape of the bounding boxes by the ratio of the width and height,<br /> which would be classified into Narrow (<= 1/2), Semi-Narrow (1/2 - 4/5), Square (4/5 - 5/4), Semi-Wide (5/4 - 2/1), or Wide (> 2/1).",
+                    "count_base": "boxes",
+                    "dataset_folder": [
+                        "inference",
+                        "prediction"
+                    ],
+                    "dataset_name": [
+                        "Test Set",
+                        "Prediction"
+                    ],
+                    "body": "box_ratio"
+                },
+                "Bounding Box Per Image": {
+                    "description": "The tables below display the number of bounding boxes per image.",
+                    "count_base": "images",
+                    "dataset_folder": [
+                        "inference",
+                        "prediction"
+                    ],
+                    "dataset_name": [
+                        "Test Set",
+                        "Prediction"
+                    ],
+                    "body": "box_per_image"
+                }
+            }
+        },
+        "Case Studies": {
+            "handler": "generate_case_studies",
+            "note":"<font color='rgb(166, 46, 23)'>Note:<br />The following case studies illustrate the model predictions according to each label listed below.<br />Each prediction is classsified by as either a True Positivem False Positive or False Negative.</font>",
+            "content_info": {
+                "Error Analysis": {}
+            }
+        }
+    },
+    "segmentation": {
+        "Model Performance - Table": {
+            "handler": "generate_model_performance_table",
+            "content_info": {
+                "Multi-Label Classification Performance Overview": {
+                    "row_name": "Label",
+                    "column_names": {
+                        "Dice (%)": {
+                            "metric": "dice",
+                            "unit": "percentage"
+                        },
+                        "TP": {
+                            "metric": "tp",
+                            "unit": "percentage"
+                        },
+                        "FP": {
+                            "metric": "fp",
+                            "unit": "percentage"
+                        },
+                        "FN": {
+                            "metric": "fn",
+                            "unit": "percentage"
+                        },
+                        "TN": {
+                            "metric": "tn",
+                            "unit": "percentage"
+                        },
+                        "Precision (%)": {
+                            "metric": "precision",
+                            "unit": "percentage"
+                        },
+                        "Recall (%)": {
+                            "metric": "recall",
+                            "unit": "percentage"
+                        },
+                        "Specificity (%)": {
+                            "metric": "specificity",
+                            "unit": "percentage"
+                        },
+                        "Accuracy (%)": {
+                            "metric": "accuracy",
+                            "unit": "percentage"
+                        },
+                        "IoU (%)": {
+                            "metric": "iou",
+                            "unit": "percentage"
+                        }
+                    },
+                    "dataset_folder": ["inference"],
+                    "dataset_name": ["Test Set"],
+                    "content_note": "<font color='rgb(166, 46, 23)'>Note:<br />Each prediction and ground truth are calculated for each class separately (with threshold 0.5).<br />(TP = True Positive, FP = False Positive, FN = False Negative, TN = True Negative)<br />* Precision: TP / (TP + FP).<br />* Recall: TP / (TP + FN)<br />* Specificity = TN / (TN + FP)<br />* Accuracy = (TP + TN) / (TP + TN + FP + FN)<br />* IoU = TP / (TP + FP + FN)</font>"
+                }
+            }
+        },
+        "Data and Prediction Statistics - Figures": {
+            "handler": "generate_data_statistics_figures",
+            "content_info": {
+                "Label Distribution": {
+                    "description": "The figures below display the number of images that contain the given label.",
+                    "dataset_folder": [
+                        "inference",
+                        "prediction"
+                    ],
+                    "dataset_name": [
+                        "Test Set",
+                        "Prediction"
+                    ],
+                    "body": "label_distribution",
+                    "show_full_len": true
+                },
+                "Mask Coverage Distribution": {
+                    "description": "The figures below display the number of bounding boxes that were assigned the given label.",
+                    "dataset_folder": [
+                        "inference",
+                        "prediction"
+                    ],
+                    "dataset_name": [
+                        "Test Set",
+                        "Prediction"
+                    ],
+                    "body": "mask_coverage_distribution",
+                    "show_full_len": false
+                }
+            }
+        },
+        "Data and Prediction Statistics - Tables": {
+            "handler": "generate_data_statistics_tables",
+            "content_info": {
+                "Label Distribution": {
+                    "description": "The tables below display the number of images that contain the given label.",
+                    "count_base": "images",
+                    "dataset_folder": [
+                        "inference",
+                        "prediction"
+                    ],
+                    "dataset_name": [
+                        "Test Set",
+                        "Prediction"
+                    ],
+                    "body": "label_distribution"
+                },
+                "Mask Coverage Distribution": {
+                    "description": "The tables below display the number of bounding boxes that were assigned the given label.",
+                    "count_base": "images",
+                    "dataset_folder": [
+                        "inference",
+                        "prediction"
+                    ],
+                    "dataset_name": [
+                        "Test Set",
+                        "Prediction"
+                    ],
+                    "body": "mask_coverage_distribution"
+                }
+            }
+        },
+        "Case Studies": {
+            "handler": "generate_case_studies",
+            "note":"<font color='rgb(166, 46, 23)'>Note:<br />The following case studies illustrate the model predictions according to each label listed below.<br />Each prediction is classsified by as either a True Positivem False Positive or False Negative.</font>",
+            "content_info": {
+                "Error Analysis": {}
+            }
+        }
+    }
+}
