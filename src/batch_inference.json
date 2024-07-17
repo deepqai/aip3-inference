@@ -1,0 +1,11 @@
+{
+    "main_params":{
+        "task_type": "detection",
+        "file_type": "jpg_png",
+	"confidence_threshold": 0.25
+    },
+    "others": {
+        "metrics": true,
+        "cuda": true
+    }
+}

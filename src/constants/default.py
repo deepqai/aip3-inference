@@ -1,0 +1,5 @@
+DEFAULT_DATA_DIR = "dataset"
+
+DEFAULT_PRETRAIN_DIR = "pretrain"
+
+DEFAULT_RESULT_DIR = "result"
